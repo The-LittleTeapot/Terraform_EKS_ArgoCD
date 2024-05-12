@@ -30,4 +30,25 @@ spec:
             httpGet:
               path: /
               port: {{ .Values.container.port }}
+          env:
+            - name: KAFKA_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-services
+                  key: kafka_host
+            - name: MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: app-services
+                  key: mongo_host
+            - name: MONGO_USER
+              valueFrom:
+                secretKeyRef:
+                  name: api-mongodb
+                  key: username
+            - name: MONGO_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: api-mongodb
+                  key: password
   
