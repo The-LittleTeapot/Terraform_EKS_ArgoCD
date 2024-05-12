@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: itaykalininsky/web-server
   pullPolicy: Always
-  tag: "v1"
+  tag: "latest"
 
 container:
   port: 8000
