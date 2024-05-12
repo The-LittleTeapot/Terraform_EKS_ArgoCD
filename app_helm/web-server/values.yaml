@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: itaykalininsky/web-server
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+container:
+  port: 8000
+
+service:
+  type: NodePort
+  port: 8000
+
